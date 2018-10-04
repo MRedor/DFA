@@ -121,7 +121,7 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    cout << c << '\n' << c0 + 1 << ' ' << minterm.size() << ' ';
+/*    cout << c << '\n' << c0 + 1 << ' ' << minterm.size() << ' ';
 
     for (int i = 0; i < minterm.size(); i++)
         cout << minterm[i] + 1 << ' ';
@@ -132,7 +132,19 @@ int main(int argc, char* argv[]) {
         }
         cout << '\n';
     }
+    */
 
+    freopen ("output.txt", "w", stdout);
+
+    cout << "digraph G\n{\n";
+    for (int i = 0; i < c; i++) { 
+        for (int j = 0; j < sigma; j++) {
+            cout << "  " << i + 1 << " -> " << ming[i][j] + 1 << "  [label=\"" << s[j] << "\"];\n";
+        }
+        //cout << '\n';
+    }
+
+    cout << "}";
 }
 
 
